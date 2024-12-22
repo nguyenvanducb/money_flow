@@ -29,10 +29,17 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   late AnimationController _hideBottomBarAnimationController;
 
   final iconList = <IconData>[
-    Icons.brightness_5,
+    Icons.home,
     Icons.brightness_4,
     Icons.brightness_6,
     Icons.brightness_7,
+  ];
+
+  final bottomNavigatorBarTitle = <String>[
+    'Trang chủ',
+    'Khám phá',
+    'Tin tức',
+    'Của bạn'
   ];
 
   @override
@@ -137,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: AutoSizeText(
-                  "brightness $index",
+                  bottomNavigatorBarTitle[index],
                   maxLines: 1,
                   style: TextStyle(color: color),
                   group: autoSizeGroup,
