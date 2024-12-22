@@ -36,6 +36,9 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_riverpod: ^2.6.1
   fluttertoast: ^8.2.10
+  animated_bottom_navigation_bar: ^1.3.3
+  circular_reveal_animation: ^2.0.1
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:

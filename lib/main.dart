@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:money_flow/modules/home/home.dart';
 import 'package:money_flow/routes.dart';
+import 'package:money_flow/theme/app_theme.dart';
 
 // A Counter example implemented with riverpod
 
@@ -10,6 +12,10 @@ void main() {
     // Adding ProviderScope enables Riverpod for the entire project
     const ProviderScope(child: MyApp()),
   );
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+    statusBarIconBrightness: Brightness.dark,
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -53,15 +59,16 @@ class _MyApp extends State<MyApp> {
         );
       },
       debugShowCheckedModeBanner: false,
-      title: 'Winitechvina',
+      title: 'Money Flow',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // home: SplashScreen(),
+      darkTheme: AppTheme.get(isLight: false),
+      home: MyHomePage(),
       // We use routeName so that we dont need to remember the name SignInScreen
       // initialRoute: SplashScreen.routeName,
-      initialRoute: Home.routeName,
+      // initialRoute: Home.routeName,
       onGenerateRoute: _onGenerateRoute,
       // routes: routes,
     );
