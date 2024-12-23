@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:money_flow/modules/home/home.dart';
+import 'package:money_flow/modules/home/bottom_navigator_bar.dart';
 import 'package:money_flow/routes.dart';
 import 'package:money_flow/theme/app_theme.dart';
 
@@ -65,7 +65,7 @@ class _MyApp extends State<MyApp> {
         useMaterial3: true,
       ),
       darkTheme: AppTheme.get(isLight: false),
-      home: MyHomePage(),
+      home: BottomNavigatorBar(),
       // We use routeName so that we dont need to remember the name SignInScreen
       // initialRoute: SplashScreen.routeName,
       // initialRoute: Home.routeName,

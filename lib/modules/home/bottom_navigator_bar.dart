@@ -8,15 +8,16 @@ import 'package:flutter/rendering.dart';
 import 'package:money_flow/theme/app_theme.dart';
 import 'package:money_flow/theme/custom_colors_theme.dart';
 
-class MyHomePage extends StatefulWidget {
+class BottomNavigatorBar extends StatefulWidget {
   static String routeName = "/Home";
-  const MyHomePage({super.key});
+  const BottomNavigatorBar({super.key});
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _BottomNavigatorBarState createState() => _BottomNavigatorBarState();
 }
 
-class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
+class _BottomNavigatorBarState extends State<BottomNavigatorBar>
+    with TickerProviderStateMixin {
   final autoSizeGroup = AutoSizeGroup();
   var _bottomNavIndex = 0; //default index of a first screen
 
