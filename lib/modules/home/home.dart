@@ -166,7 +166,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         hideAnimationController: _hideBottomBarAnimationController,
         shadow: BoxShadow(
           offset: Offset(0, 1),
-          blurRadius: 12,
+          blurRadius: 5,
           spreadRadius: 0.5,
           color: colors.activeNavigationBarColor,
         ),

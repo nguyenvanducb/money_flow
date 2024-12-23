@@ -64,7 +64,7 @@ class _MyApp extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      darkTheme: AppTheme.get(isLight: true),
+      darkTheme: AppTheme.get(isLight: false),
       home: MyHomePage(),
       // We use routeName so that we dont need to remember the name SignInScreen
       // initialRoute: SplashScreen.routeName,
