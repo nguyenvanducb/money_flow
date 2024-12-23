@@ -157,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         activeIndex: _bottomNavIndex,
         splashColor: colors.activeNavigationBarColor,
         notchAndCornersAnimation: borderRadiusAnimation,
-        splashSpeedInMilliseconds: 300,
+        splashSpeedInMilliseconds: 30,
         notchSmoothness: NotchSmoothness.defaultEdge,
         gapLocation: GapLocation.center,
         // leftCornerRadius: 32,
