@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:money_flow/modules/home/bottom_navigator_bar.dart';
+import 'package:money_flow/modules/menu/bottom_navigator_bar.dart';
 
 typedef PageContentBuilder = Widget Function([dynamic arguments]);
 
