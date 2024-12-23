@@ -4,6 +4,7 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:money_flow/modules/home/home.dart';
 import 'package:money_flow/modules/menu/navigation_screen.dart';
 import 'package:money_flow/theme/app_theme.dart';
 import 'package:money_flow/theme/custom_colors_theme.dart';
@@ -41,6 +42,13 @@ class _BottomNavigatorBarState extends State<BottomNavigatorBar>
     'Khám phá',
     'Tin tức',
     'Của bạn'
+  ];
+
+  final screens = <Widget>[
+    Home(),
+    NavigationScreen(Icons.brightness_4),
+    NavigationScreen(Icons.brightness_6),
+    NavigationScreen(Icons.brightness_7)
   ];
 
   @override
@@ -110,7 +118,7 @@ class _BottomNavigatorBarState extends State<BottomNavigatorBar>
       extendBody: true,
       body: NotificationListener<ScrollNotification>(
         onNotification: onScrollNotification,
-        child: NavigationScreen(iconList[_bottomNavIndex]),
+        child: screens[_bottomNavIndex],
       ),
       floatingActionButton: FloatingActionButton(
         shape: CircleBorder(),
