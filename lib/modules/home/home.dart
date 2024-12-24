@@ -1,8 +1,23 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:money_flow/repository/apis/api_home.dart';
+import 'package:money_flow/repository/apis/http_manager.dart';
 import 'package:money_flow/theme/custom_colors_theme.dart';
 
-final counterProvider = StateProvider((ref) => 0);
+final dataProvider = FutureProvider((ref) async {
+  final apihome = APIHOME(HTTPManager(Dio()));
+  return await apihome.indicator({
+    "indexIds": [
+      "VNINDEX",
+      "VN30",
+      "HNX30",
+      "VNXALL",
+      "HNXIndex",
+      "HNXUpcomIndex"
+    ]
+  });
+});
 
 class Home extends ConsumerWidget {
   const Home({super.key});
@@ -11,7 +26,9 @@ class Home extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     var widthS = MediaQuery.of(context).size.width;
     final colors = Theme.of(context).extension<CustomColorsTheme>()!;
-    Widget item(String title, {isLine = true}) {
+    final data = ref.watch(dataProvider);
+
+    Widget item(String title, String value, {isLine = true}) {
       return Container(
         width: widthS / 3 - 15,
         height: 50,
@@ -41,10 +58,8 @@ class Home extends ConsumerWidget {
     }
 
     return Center(
-      // Consumer is a builder widget that allows you to read providers.
       child: Consumer(
         builder: (context, ref, _) {
-          final count = ref.watch(counterProvider);
           return Container(
             margin: EdgeInsets.all(10),
             padding: EdgeInsets.all(10),
@@ -54,9 +69,9 @@ class Home extends ConsumerWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                item('VNINDEX'),
-                item('HNXINDEX'),
-                item('UPINDEX', isLine: false),
+                item('VNINDEX', ''),
+                item('HNXINDEX', ''),
+                item('UPINDEX', '', isLine: false),
               ],
             ),
           );
