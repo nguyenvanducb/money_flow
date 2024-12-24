@@ -2,28 +2,29 @@ import 'package:flutter/material.dart';
 
 @immutable
 class CustomColorsTheme extends ThemeExtension<CustomColorsTheme> {
-  const CustomColorsTheme({
-    required this.bottomNavigationBarBackgroundColor,
-    required this.colorLabelColor,
-    required this.activeNavigationBarColor,
-    required this.notActiveNavigationBarColor,
-    required this.shadowNavigationBarColor,
-  });
+  const CustomColorsTheme(
+      {required this.bottomNavigationBarBackgroundColor,
+      required this.colorLabelColor,
+      required this.activeNavigationBarColor,
+      required this.notActiveNavigationBarColor,
+      required this.shadowNavigationBarColor,
+      required this.characterColor});
 
   final Color bottomNavigationBarBackgroundColor;
   final Color colorLabelColor;
   final Color activeNavigationBarColor;
   final Color notActiveNavigationBarColor;
   final Color shadowNavigationBarColor;
+  final Color characterColor;
 
   @override
-  CustomColorsTheme copyWith({
-    Color? bottomNavigationBarBackgroundColor,
-    Color? colorLabelColor,
-    Color? activeNavigationBarColor,
-    Color? notActiveNavigationBarColor,
-    Color? shadowNavigationBarColor,
-  }) {
+  CustomColorsTheme copyWith(
+      {Color? bottomNavigationBarBackgroundColor,
+      Color? colorLabelColor,
+      Color? activeNavigationBarColor,
+      Color? notActiveNavigationBarColor,
+      Color? shadowNavigationBarColor,
+      Color? characterColor}) {
     return CustomColorsTheme(
       bottomNavigationBarBackgroundColor: bottomNavigationBarBackgroundColor ??
           this.bottomNavigationBarBackgroundColor,
@@ -34,6 +35,7 @@ class CustomColorsTheme extends ThemeExtension<CustomColorsTheme> {
           notActiveNavigationBarColor ?? this.notActiveNavigationBarColor,
       shadowNavigationBarColor:
           shadowNavigationBarColor ?? this.shadowNavigationBarColor,
+      characterColor: characterColor ?? this.characterColor,
     );
   }
 
@@ -46,22 +48,23 @@ class CustomColorsTheme extends ThemeExtension<CustomColorsTheme> {
       return this;
     }
     return CustomColorsTheme(
-      bottomNavigationBarBackgroundColor: Color.lerp(
-              bottomNavigationBarBackgroundColor,
-              other.bottomNavigationBarBackgroundColor,
-              t) ??
-          bottomNavigationBarBackgroundColor,
-      colorLabelColor: Color.lerp(colorLabelColor, other.colorLabelColor, t) ??
-          colorLabelColor,
-      activeNavigationBarColor: Color.lerp(
-              activeNavigationBarColor, other.activeNavigationBarColor, t) ??
-          activeNavigationBarColor,
-      notActiveNavigationBarColor: Color.lerp(notActiveNavigationBarColor,
-              other.notActiveNavigationBarColor, t) ??
-          notActiveNavigationBarColor,
-      shadowNavigationBarColor: Color.lerp(
-              shadowNavigationBarColor, other.shadowNavigationBarColor, t) ??
-          shadowNavigationBarColor,
-    );
+        bottomNavigationBarBackgroundColor: Color.lerp(
+                bottomNavigationBarBackgroundColor,
+                other.bottomNavigationBarBackgroundColor,
+                t) ??
+            bottomNavigationBarBackgroundColor,
+        colorLabelColor: Color.lerp(colorLabelColor, other.colorLabelColor, t) ??
+            colorLabelColor,
+        activeNavigationBarColor: Color.lerp(
+                activeNavigationBarColor, other.activeNavigationBarColor, t) ??
+            activeNavigationBarColor,
+        notActiveNavigationBarColor:
+            Color.lerp(notActiveNavigationBarColor, other.notActiveNavigationBarColor, t) ??
+                notActiveNavigationBarColor,
+        shadowNavigationBarColor: Color.lerp(
+                shadowNavigationBarColor, other.shadowNavigationBarColor, t) ??
+            shadowNavigationBarColor,
+        characterColor: Color.lerp(characterColor, other.characterColor, t) ??
+            characterColor);
   }
 }

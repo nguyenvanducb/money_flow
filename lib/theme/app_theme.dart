@@ -14,6 +14,7 @@ class AppTheme {
           colorLabelColor: isLight ? Colors.grey : const Color(0xFF7A7FB0),
           bottomNavigationBarBackgroundColor: isLight ? Colors.blue : colorGray,
           activeNavigationBarColor: isLight ? Colors.yellow : colorOrange,
+          characterColor: isLight ? Colors.black : Colors.white,
           notActiveNavigationBarColor: Colors.white,
           shadowNavigationBarColor: isLight ? Colors.blue : colorOrange,
         )
