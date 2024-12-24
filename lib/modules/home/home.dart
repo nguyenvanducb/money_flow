@@ -8,12 +8,36 @@ class Home extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    var widthS = MediaQuery.of(context).size.width;
     return Center(
       // Consumer is a builder widget that allows you to read providers.
       child: Consumer(
         builder: (context, ref, _) {
           final count = ref.watch(counterProvider);
-          return Text('$count');
+          return Container(
+            margin: EdgeInsets.all(10),
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12.0),
+                color: Colors.black54),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  width: widthS / 3 - 15,
+                  child: Text('VNINDEX'),
+                ),
+                SizedBox(
+                  width: widthS / 3 - 15,
+                  child: Text('HNXINDEX'),
+                ),
+                SizedBox(
+                  width: widthS / 3 - 15,
+                  child: Text('UPINDEX'),
+                ),
+              ],
+            ),
+          );
         },
       ),
     );
