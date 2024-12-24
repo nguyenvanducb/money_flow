@@ -58,14 +58,15 @@ class Home extends ConsumerWidget {
     }
 
     return Center(
-      child: Consumer(
-        builder: (context, ref, _) {
+      child: data.when(
+        data: (data) {
           return Container(
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12.0),
-                color: Colors.black54),
+              borderRadius: BorderRadius.circular(12.0),
+              color: Colors.black54,
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -76,6 +77,8 @@ class Home extends ConsumerWidget {
             ),
           );
         },
+        loading: () => const CircularProgressIndicator(),
+        error: (err, _) => Text('Lỗi: $err'),
       ),
     );
   }
